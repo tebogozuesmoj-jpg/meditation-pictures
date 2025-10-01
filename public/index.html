@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meditation Pictures — Authenticating Memories</title>
+  <meta name="description" content="Meditation Pictures — Weddings, Schools, Studio & Corporate photography. Book a shoot today." />
+
+  <!-- Tailwind CDN for quick prototyping -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Replace with your fonts as needed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="font-['Inter'],sans-serif text-gray-800 antialiased">
+
+  <!-- NAV -->
+  <header class="bg-white shadow-sm sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <img src="assets/images/DSC_0039.jpg" alt="Meditation Pictures logo" class="w-10 h-10 object-contain">
+        <span class="font-semibold text-lg">Meditation Pictures</span>
+      </a>
+      <nav class="hidden md:flex gap-6 items-center text-sm">
+        <a href="#portfolio" class="hover:underline">Portfolio</a>
+        <a href="#services" class="hover:underline">Services</a>
+        <a href="#studio" class="hover:underline">Studio</a>
+        <a href="#testimonials" class="hover:underline">Testimonials</a>
+        <a href="#blog" class="hover:underline">Blog</a>
+        <a href="#book" class="px-4 py-2 bg-black text-white rounded">Book a Session</a>
+      </nav>
+
+      <!-- mobile menu button -->
+      <button id="navToggle" class="md:hidden p-2">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- mobile nav -->
+    <div id="mobileNav" class="md:hidden hidden bg-white border-t">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#studio">Studio</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#blog">Blog</a>
+        <a href="#book" class="inline-block mt-2 px-4 py-2 bg-black text-white rounded">Book a Session</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="relative bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl md:text-6xl font-semibold leading-tight">Authenticating Memories</h1>
+          <p class="mt-6 text-lg text-gray-600">We craft honest, thoughtful photographs — weddings, schools, studio and corporate shoots.</p>
+          <div class="mt-8 flex gap-4">
+            <a href="#book" class="inline-block px-6 py-3 bg-black text-white rounded-lg">Book a Shoot</a>
+            <a href="https://instagram.com/@Meditation.pictures_sa" target="_blank" class="inline-block px-6 py-3 border border-gray-300 rounded-lg">Follow us on Instagram</a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <!-- change to your hero image in assets/images/hero.jpg -->
+          <img src="assets/images/DSC_0042.jpg" alt="Hero — sample photo" class="w-full rounded-lg shadow-lg object-cover h-80 md:h-[420px]">
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="max-w-6xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-semibold">Portfolio — Our Work</h2>
+      <p class="text-gray-600 mt-2">Click a category to explore. See more on Instagram →</p>
+
+      <div class="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- category card -->
+        <article class="rounded-lg overflow-hidden shadow">
+          <img src="assets/images/DSC_0042.jpg" alt="Weddings" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold">Weddings</h3>
+            <p class="text-sm text-gray-600 mt-1">Timeless wedding stories.</p>
+            <a href="https://instagram.com/@Meditation.pictures_sa" target="_blank" class="mt-3 inline-block text-sm text-blue-600">See more on Instagram →</a>
+          </div>
+        </article>
+
+        <article class="rounded-lg overflow-hidden shadow">
+          <img src="assets/images/DSC_0081.jpg" alt="Schools" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold">Schools</h3>
+            <p class="text-sm text-gray-600 mt-1">Class photos & yearbook-ready shots.</p>
+            <a href="https://instagram.com/@Meditation.pictures_sa" target="_blank" class="mt-3 inline-block text-sm text-blue-600">See more on Instagram →</a>
+          </div>
+        </article>
+
+        <article class="rounded-lg overflow-hidden shadow">
+          <img src="assets/images/DSC_0010.jpg" alt="Studio" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold">Studio</h3>
+            <p class="text-sm text-gray-600 mt-1">Controlled light, strong character.</p>
+            <a href="https://instagram.com/@Meditation.pictures_sa" target="_blank" class="mt-3 inline-block text-sm text-blue-600">See more on Instagram →</a>
+          </div>
+        </article>
+
+        <!-- add more cards for Corporate, Lifestyle -->
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="bg-white/50 py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-2xl font-semibold">Services & Packages</h2>
+        <p class="text-gray-600 mt-2">Transparent pricing and what’s included.</p>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-3">
+          <!-- Entry -->
+          <div class="border rounded-lg p-6">
+            <h3 class="font-semibold">Entry</h3>
+            <p class="mt-2 text-sm text-gray-600">Short session, digital gallery</p>
+            <ul class="mt-4 text-sm space-y-1">
+              <li>30 min shoot</li>
+              <li>10 edited images</li>
+              <li>Online gallery</li>
+            </ul>
+            <div class="mt-4">
+              <a href="#book" class="inline-block px-4 py-2 border rounded">Request a Quote</a>
+            </div>
+          </div>
+
+          <!-- Standard -->
+          <div class="border rounded-lg p-6 shadow-lg">
+            <h3 class="font-semibold">Standard</h3>
+            <p class="mt-2 text-sm text-gray-600">Most popular</p>
+            <ul class="mt-4 text-sm space-y-1">
+              <li>1 hour shoot</li>
+              <li>30 edited images</li>
+              <li>Print-ready files</li>
+            </ul>
+            <div class="mt-4">
+              <a href="#book" class="inline-block px-4 py-2 bg-black text-white rounded">Book Now</a>
+            </div>
+          </div>
+
+          <!-- Premium -->
+          <div class="border rounded-lg p-6">
+            <h3 class="font-semibold">Premium</h3>
+            <p class="mt-2 text-sm text-gray-600">Full coverage + prints</p>
+            <ul class="mt-4 text-sm space-y-1">
+              <li>Full-day coverage</li>
+              <li>High-res images + album</li>
+              <li>On-site prints</li>
+            </ul>
+            <div class="mt-4">
+              <a href="#book" class="inline-block px-4 py-2 border rounded">Request a Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDIO / TEAM -->
+    <section id="studio" class="max-w-6xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-semibold">Studio Experience / Behind the Lens</h2>
+      <p class="text-gray-600 mt-2">Meet Kabo & the team — behind the scenes clips linked to TikTok/Reels.</p>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-4 border rounded">
+          <img src="assets/images/DSC_0005.jpg" alt="Kabo" class="w-24 h-24 rounded-full object-cover">
+          <h4 class="mt-3 font-semibold">Kabo — Lead Photographer</h4>
+          <p class="text-sm text-gray-600 mt-1">Creative director & editor.</p>
+          <a href="https://tiktok.com/@Meditation.pictures_sa" target="_blank" class="text-sm mt-2 inline-block text-blue-600">Follow our journey on TikTok</a>
+        </div>
+
+        <!-- more team members -->
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="bg-gray-50 py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-2xl font-semibold">Testimonials / Client Stories</h2>
+        <p class="text-gray-600 mt-2">Video snippets + photo reviews. Share your experience — tag us @Meditation.pictures_za</p>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <!-- placeholder testimonial video (upload or embed IG/FB) -->
+          <div class="border rounded p-4">
+            <div class="aspect-video">
+              <!-- replace iframe src with a hosted video (YouTube/Vimeo) -->
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Client test" frameborder="0" allowfullscreen class="w-full h-full"></iframe>
+            </div>
+            <p class="mt-3 text-sm text-gray-600">"Amazing experience — highly recommend!"</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" class="max-w-6xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-semibold">Blog / Tips & Inspiration</h2>
+      <p class="text-gray-600 mt-2">Short posts to help clients prepare for shoots.</p>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <article class="border rounded p-4">
+          <h3 class="font-semibold">Best Poses for School Photos</h3>
+          <p class="mt-2 text-sm text-gray-600">Quick tips to make a class photo day go smoothly.</p>
+          <a class="mt-3 inline-block text-sm text-blue-600" href="#">Read →</a>
+        </article>
+
+        <!-- more posts -->
+      </div>
+    </section>
+
+    <!-- BOOK (Calendly embed example) -->
+    <section id="book" class="max-w-4xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-semibold">Book a Session</h2>
+      <p class="text-gray-600 mt-2">Secure your spot today — choose a time that suits you.</p>
+
+      <div class="mt-8">
+        <!-- Inline Calendly widget: replace with your Calendly URL -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/your-calendly-username/30min" style="min-width:320px;height:630px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+    </section>
+
+    <!-- CONTACT (Formspree example & WhatsApp) -->
+    <section id="contact" class="max-w-4xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-semibold">Contact Us</h2>
+      <p class="text-gray-600 mt-2">Quick form + WhatsApp integration.</p>
+
+      <form action="https://formspree.io/f/YOUR-FORMSPREE-ID" method="POST" class="mt-6 grid gap-4">
+        <input name="name" required placeholder="Name" class="border rounded p-3" />
+        <input name="email" type="email" required placeholder="Email" class="border rounded p-3" />
+        <input name="phone" placeholder="Phone (optional)" class="border rounded p-3" />
+        <textarea name="message" rows="4" placeholder="Tell us about the shoot" class="border rounded p-3"></textarea>
+        <div class="flex gap-3">
+          <button type="submit" class="px-4 py-2 bg-black text-white rounded">Send Inquiry</button>
+          <!-- WhatsApp link (South Africa example +27) -->
+          <a href="https://wa.me/27617036471" target="_blank" class="px-4 py-2 border rounded flex items-center">Chat on WhatsApp</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t py-8">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-6">
+        <div>
+          <h4 class="font-semibold">Meditation Pictures</h4>
+          <p class="text-sm text-gray-600 mt-2">About Us | FAQ | Privacy Policy | Careers</p>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <div class="flex gap-3">
+            <!-- social icons -->
+            <a href="https://instagram.com/@Meditation.pictures_sa" target="_blank" aria-label="instagram">IG</a>
+            <a href="https://tiktok.com/@Meditation.pictures_sa" target="_blank" aria-label="tiktok">TT</a>
+            <a href="https://facebook.com/@Meditation.pictures_sa" target="_blank" aria-label="facebook">FB</a>
+            <a href="https://youtube.com/@Meditation.pictures_sa" target="_blank" aria-label="youtube">YT</a>
+          </div>
+
+          <form action="https://YOUR_MAILCHIMP_OR_OTHER_SIGNUP_URL" method="GET" class="flex gap-2">
+            <input type="email" placeholder="Enter your email" class="border rounded p-2 text-sm" />
+            <button class="px-3 py-2 bg-black text-white rounded text-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

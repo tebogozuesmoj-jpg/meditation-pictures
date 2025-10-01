@@ -1,0 +1,12 @@
+/* styles.css (public/assets/css/styles.css) */
+/* small helpers and image placeholders */
+:root {
+  --brand: #111827;
+}
+
+/* default body font fallbacks handled by Tailwind */
+img { display:block; max-width:100%; }
+
+.header-shadow { box-shadow: 0 6px 20px rgba(15,23,42,0.06); }
+
+/* tune hero text contrast if you add overlayed image */
