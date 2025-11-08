@@ -217,35 +217,85 @@
       </div>
     </section>
 
-    <!-- BOOK (Calendly embed example) -->
+    <!-- BOOK A SESSION (Calendly embed) -->
     <section id="book" class="max-w-4xl mx-auto px-6 py-16">
       <h2 class="text-2xl font-semibold">Book a Session</h2>
-      <p class="text-gray-600 mt-2">Secure your spot today — choose a time that suits you.</p>
+      <p class="text-gray-600 mt-2">
+        Choose a time that works best for you using our online calendar.
+      </p>
 
       <div class="mt-8">
-        <!-- Inline Calendly widget: replace with your Calendly URL -->
-        <div class="calendly-inline-widget" data-url="https://calendly.com/your-calendly-username/30min" style="min-width:320px;height:630px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget begin -->
+        <div
+          class="calendly-inline-widget"
+          data-url="https://calendly.com/zuespink/30min"
+          style="min-width:320px; height:700px;"
+        ></div>
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        ></script>
+        <!-- Calendly inline widget end -->
       </div>
     </section>
 
     <!-- CONTACT (Formspree example & WhatsApp) -->
-    <section id="contact" class="max-w-4xl mx-auto px-6 py-16">
+    <section id="contact" class="max-w-4xl mx-auto px-6 py-16 border-t mt-16">
       <h2 class="text-2xl font-semibold">Contact Us</h2>
       <p class="text-gray-600 mt-2">Quick form + WhatsApp integration.</p>
 
-      <form action="https://formspree.io/f/YOUR-FORMSPREE-ID" method="POST" class="mt-6 grid gap-4">
+      <form
+        action="https://formspree.io/f/mwpaelod"
+        method="POST"
+        class="mt-6 grid gap-4"
+      >
         <input name="name" required placeholder="Name" class="border rounded p-3" />
-        <input name="email" type="email" required placeholder="Email" class="border rounded p-3" />
-        <input name="phone" placeholder="Phone (optional)" class="border rounded p-3" />
-        <textarea name="message" rows="4" placeholder="Tell us about the shoot" class="border rounded p-3"></textarea>
+        <input
+          name="email"
+          type="email"
+          required
+          placeholder="Email"
+          class="border rounded p-3"
+        />
+        <input
+          name="phone"
+          placeholder="Phone (optional)"
+          class="border rounded p-3"
+        />
+        <textarea
+          name="message"
+          rows="4"
+          placeholder="Tell us about the shoot"
+          class="border rounded p-3"
+        ></textarea>
         <div class="flex gap-3">
-          <button type="submit" class="px-4 py-2 bg-black text-white rounded">Send Inquiry</button>
+          <button
+            type="submit"
+            class="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition"
+          >
+            Send Inquiry
+          </button>
           <!-- WhatsApp link (South Africa example +27) -->
-          <a href="https://wa.me/27617036471" target="_blank" class="px-4 py-2 border rounded flex items-center">Chat on WhatsApp</a>
+          <a
+            href="https://wa.me/27617036471"
+            target="_blank"
+            class="px-4 py-2 border rounded flex items-center hover:bg-gray-100 transition"
+          >
+            Chat on WhatsApp
+          </a>
         </div>
       </form>
     </section>
+
+    <!-- Optional responsive fix for Calendly -->
+    <style>
+    @media (max-width: 640px) {
+      .calendly-inline-widget {
+        height: 900px !important;
+      }
+    }
+    </style>
 
     <!-- FOOTER -->
     <footer class="bg-white border-t py-8">
