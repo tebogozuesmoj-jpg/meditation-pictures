@@ -114,6 +114,20 @@
       </div>
     </section>
 
+
+    <!-- FEATURED PHOTOS -->
+    <section id="slideshow" class="max-w-4xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-semibold mb-4">Our Featured Photos</h2>
+      <div class="relative w-full h-80 md:h-96 overflow-hidden rounded-lg shadow-lg">
+        <img id="slide-image" src="assets/images/DSC_0042.jpg" class="w-full h-full object-cover transition-all duration-500" alt="Slideshow image">
+    
+        <!-- optional prev/next buttons -->
+        <button id="prev-slide" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded">❮</button>
+        <button id="next-slide" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded">❯</button>
+      </div>
+    </section>
+
+
     <!-- SERVICES -->
     <section id="services" class="bg-white/50 py-16">
       <div class="max-w-6xl mx-auto px-6">
@@ -366,6 +380,41 @@
       chat.scrollTop = chat.scrollHeight;
       input.value = "";
     };
+  </script>
+
+  <script>
+    const images = [
+      'assets/images/DSC_0049.jpg',
+      'assets/images/DSC_0072.jpg',
+      'assets/images/DSC_0033.jpg',
+      'assets/images/DSC_0053.jpg',
+      'assets/images/DSC_0044.jpg',
+      'assets/images/DSC_0061.jpg',
+      'assets/images/DSC_0027.jpg',
+      'assets/images/DSC_0014.jpg',
+      'assets/images/DSC_0008.jpg',
+      'assets/images/DSC_0037.jpg',
+      'assets/images/DSC_0069.jpg',
+      // add more images in your folder here
+    ];
+
+    let currentIndex = 0;
+    const slideImage = document.getElementById('slide-image');
+    const nextBtn = document.getElementById('next-slide');
+    const prevBtn = document.getElementById('prev-slide');
+
+    function showSlide(index) {
+      currentIndex = (index + images.length) % images.length; // loop around
+      slideImage.src = images[currentIndex];
+    }
+
+    nextBtn.onclick = () => showSlide(currentIndex + 1);
+    prevBtn.onclick = () => showSlide(currentIndex - 1);
+
+    // Automatic slideshow every 5 seconds
+    setInterval(() => {
+      showSlide(currentIndex + 1);
+    }, 5000);
   </script>
 
 </body>
