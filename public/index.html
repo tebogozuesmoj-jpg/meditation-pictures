@@ -6,16 +6,17 @@
   <title>Meditation Pictures — Authenticating Memories</title>
   <meta name="description" content="Meditation Pictures — Weddings, Schools, Studio & Corporate photography. Book a shoot today." />
 
-  <!-- Tailwind CDN for quick prototyping -->
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Replace with your fonts as needed -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Your custom CSS -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body class="font-['Inter'],sans-serif text-gray-800 antialiased">
 
   <!-- NAV -->
@@ -55,8 +56,10 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- MAIN CONTENT -->
   <main>
+
+    <!-- HERO -->
     <section class="relative bg-gray-50">
       <div class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center">
         <div>
@@ -69,7 +72,6 @@
         </div>
 
         <div class="relative">
-          <!-- change to your hero image in assets/images/hero.jpg -->
           <img src="assets/images/DSC_0042.jpg" alt="Hero — sample photo" class="w-full rounded-lg shadow-lg object-cover h-80 md:h-[420px]">
         </div>
       </div>
@@ -81,7 +83,7 @@
       <p class="text-gray-600 mt-2">Click a category to explore. See more on Instagram →</p>
 
       <div class="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <!-- category card -->
+        
         <article class="rounded-lg overflow-hidden shadow">
           <img src="assets/images/DSC_0042.jpg" alt="Weddings" class="w-full h-48 object-cover">
           <div class="p-4">
@@ -109,7 +111,6 @@
           </div>
         </article>
 
-        <!-- add more cards for Corporate, Lifestyle -->
       </div>
     </section>
 
@@ -120,7 +121,7 @@
         <p class="text-gray-600 mt-2">Transparent pricing and what’s included.</p>
 
         <div class="mt-8 grid gap-6 md:grid-cols-3">
-          <!-- Entry -->
+
           <div class="border rounded-lg p-6">
             <h3 class="font-semibold">Entry</h3>
             <p class="mt-2 text-sm text-gray-600">Short session, digital gallery</p>
@@ -134,7 +135,6 @@
             </div>
           </div>
 
-          <!-- Standard -->
           <div class="border rounded-lg p-6 shadow-lg">
             <h3 class="font-semibold">Standard</h3>
             <p class="mt-2 text-sm text-gray-600">Most popular</p>
@@ -148,7 +148,6 @@
             </div>
           </div>
 
-          <!-- Premium -->
           <div class="border rounded-lg p-6">
             <h3 class="font-semibold">Premium</h3>
             <p class="mt-2 text-sm text-gray-600">Full coverage + prints</p>
@@ -161,11 +160,12 @@
               <a href="#book" class="inline-block px-4 py-2 border rounded">Request a Quote</a>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- STUDIO / TEAM -->
+    <!-- STUDIO -->
     <section id="studio" class="max-w-6xl mx-auto px-6 py-16">
       <h2 class="text-2xl font-semibold">Studio Experience / Behind the Lens</h2>
       <p class="text-gray-600 mt-2">Meet Kabo & the team — behind the scenes clips linked to TikTok/Reels.</p>
@@ -177,8 +177,6 @@
           <p class="text-sm text-gray-600 mt-1">Creative director & editor.</p>
           <a href="https://instagram.com/meditation.pictures_sa" target="_blank" class="text-sm mt-2 inline-block text-blue-600">Follow our journey on TikTok</a>
         </div>
-
-        <!-- more team members -->
       </div>
     </section>
 
@@ -189,14 +187,14 @@
         <p class="text-gray-600 mt-2">Video snippets + photo reviews. Share your experience — tag us @Meditation.pictures_za</p>
 
         <div class="mt-8 grid md:grid-cols-3 gap-6">
-          <!-- placeholder testimonial video (upload or embed IG/FB) -->
+
           <div class="border rounded p-4">
             <div class="aspect-video">
-              <!-- replace iframe src with a hosted video (YouTube/Vimeo) -->
               <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Client test" frameborder="0" allowfullscreen class="w-full h-full"></iframe>
             </div>
             <p class="mt-3 text-sm text-gray-600">"Amazing experience — highly recommend!"</p>
           </div>
+
         </div>
       </div>
     </section>
@@ -207,17 +205,17 @@
       <p class="text-gray-600 mt-2">Short posts to help clients prepare for shoots.</p>
 
       <div class="mt-8 grid md:grid-cols-3 gap-6">
+
         <article class="border rounded p-4">
           <h3 class="font-semibold">Best Poses for School Photos</h3>
           <p class="mt-2 text-sm text-gray-600">Quick tips to make a class photo day go smoothly.</p>
           <a class="mt-3 inline-block text-sm text-blue-600" href="#">Read →</a>
         </article>
 
-        <!-- more posts -->
       </div>
     </section>
 
-    <!-- BOOK A SESSION (Calendly embed) -->
+    <!-- BOOKING -->
     <section id="book" class="max-w-4xl mx-auto px-6 py-16">
       <h2 class="text-2xl font-semibold">Book a Session</h2>
       <p class="text-gray-600 mt-2">
@@ -225,103 +223,50 @@
       </p>
 
       <div class="mt-8">
-        <!-- Calendly inline widget begin -->
-        <div
-          class="calendly-inline-widget"
+        <div class="calendly-inline-widget"
           data-url="https://calendly.com/zuespink/30min"
-          style="min-width:320px; height:700px;"
-        ></div>
-        <script
-          type="text/javascript"
+          style="min-width:320px; height:700px;"></div>
+
+        <script type="text/javascript"
           src="https://assets.calendly.com/assets/external/widget.js"
-          async
-        ></script>
-        <!-- Calendly inline widget end -->
+          async></script>
       </div>
     </section>
 
-    <!-- CONTACT (Formspree example & WhatsApp) -->
+    <!-- CONTACT -->
     <section id="contact" class="max-w-4xl mx-auto px-6 py-16 border-t mt-16">
       <h2 class="text-2xl font-semibold">Contact Us</h2>
       <p class="text-gray-600 mt-2">Quick form + WhatsApp integration.</p>
 
-      <form
-        action="https://formspree.io/f/mwpaelod"
-        method="POST"
-        class="mt-6 grid gap-4"
-      >
+      <form action="https://formspree.io/f/mwpaelod" method="POST" class="mt-6 grid gap-4">
         <input name="name" required placeholder="Name" class="border rounded p-3" />
-        <input
-          name="email"
-          type="email"
-          required
-          placeholder="Email"
-          class="border rounded p-3"
-        />
-        <input
-          name="phone"
-          placeholder="Phone (optional)"
-          class="border rounded p-3"
-        />
-        <textarea
-          name="message"
-          rows="4"
-          placeholder="Tell us about the shoot"
-          class="border rounded p-3"
-        ></textarea>
+        <input name="email" type="email" required placeholder="Email" class="border rounded p-3" />
+        <input name="phone" placeholder="Phone (optional)" class="border rounded p-3" />
+        <textarea name="message" rows="4" placeholder="Tell us about the shoot" class="border rounded p-3"></textarea>
+
         <div class="flex gap-3">
-          <button
-            type="submit"
-            class="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition"
-          >
-            Send Inquiry
-          </button>
-          <!-- WhatsApp link (South Africa example +27) -->
-          <a
-            href="https://wa.me/27617036471"
-            target="_blank"
-            class="px-4 py-2 border rounded flex items-center hover:bg-gray-100 transition"
-          >
-            Chat on WhatsApp
-          </a>
+          <button type="submit" class="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition">Send Inquiry</button>
+
+          <a href="https://wa.me/27617036471" target="_blank" class="px-4 py-2 border rounded flex items-center hover:bg-gray-100 transition">Chat on WhatsApp</a>
         </div>
       </form>
     </section>
-
-    <!-- Optional responsive fix for Calendly -->
-    <style>
-    @media (max-width: 640px) {
-      .calendly-inline-widget {
-        height: 900px !important;
-      }
-    }
-    </style>
 
     <!-- LOCATION -->
     <section id="location" class="max-w-4xl mx-auto px-6 py-16 border-t mt-16">
       <h2 class="text-2xl font-semibold">Our Studio Location</h2>
       <p class="text-gray-600 mt-2">
-        Visit Meditation Picture's Photo STUDIO B in Hartswater, Northen Cape, South Africa.
+        Visit Meditation Picture's Photo STUDIO B in Hartswater, Northern Cape, South Africa.
       </p>
 
       <div class="mt-8 rounded-xl overflow-hidden shadow">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3434.0078613129375!2d24.800185075529748!3d-27.74338307617193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e997de7a25e7c27%3A0xb64c87ae72c41842!2sMeditation%20Picture's%20Photo%20STUDIO%20B!5e0!3m2!1sen!2sza!4v1731100000000!5m2!1sen!2sza"
-          width="100%"
-          height="450"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3434.0078613129375!2d24.800185075529748!3d-27.74338307617193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e997de7a25e7c27%3A0xb64c87ae72c41842!2sMeditation%20Picture's%20Photo%20STUDIO%20B!5e0!3m2!1sen!2sza!4v1731100000000!5m2!1sen!2sza"
+          width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
       </div>
 
       <div class="mt-4">
-        <a
-          href="https://www.google.com/maps/place/Meditation+Picture's+Photo+STUDIO+B/@-27.7433792,24.8027608,17z/"
-          target="_blank"
-          class="text-blue-600 hover:underline"
-        >
+        <a href="https://www.google.com/maps/place/Meditation+Picture's+Photo+STUDIO+B"
+          target="_blank" class="text-blue-600 hover:underline">
           📍 Open in Google Maps
         </a>
       </div>
@@ -337,14 +282,13 @@
 
         <div class="flex flex-col gap-3">
           <div class="flex gap-3">
-            <!-- social icons -->
-            <a href="https://instagram.com/meditation.pictures_sa" target="_blank" aria-label="instagram">IG</a>
-            <a href="https://tiktok.com/@Meditation.pictures_sa" target="_blank" aria-label="tiktok">TT</a>
-            <a href="https://facebook.com/meditation.pictures_sa" target="_blank" aria-label="facebook">FB</a>
-            <a href="https://youtube.com/@Meditation.pictures_sa" target="_blank" aria-label="youtube">YT</a>
+            <a href="https://instagram.com/meditation.pictures_sa" target="_blank">IG</a>
+            <a href="https://tiktok.com/@Meditation.pictures_sa" target="_blank">TT</a>
+            <a href="https://facebook.com/meditation.pictures_sa" target="_blank">FB</a>
+            <a href="https://youtube.com/@Meditation.pictures_sa" target="_blank">YT</a>
           </div>
 
-          <form action="https://YOUR_MAILCHIMP_OR_OTHER_SIGNUP_URL" method="GET" class="flex gap-2">
+          <form action="#" method="GET" class="flex gap-2">
             <input type="email" placeholder="Enter your email" class="border rounded p-2 text-sm" />
             <button class="px-3 py-2 bg-black text-white rounded text-sm">Subscribe</button>
           </form>
@@ -354,6 +298,75 @@
 
   </main>
 
+
+  <!-- ✅ CHATBOT HTML (Bottom-left, Glass Style) -->
+  <div id="chatbot-button"
+     class="fixed bottom-6 left-6 backdrop-blur-md bg-black/40 text-white p-4 rounded-full cursor-pointer shadow-xl border border-white/10 hover:bg-black/50 transition">
+  💬
+  </div>
+
+
+  <div id="chatbot-window"
+       class="hidden fixed bottom-24 left-6 w-80 backdrop-blur-xl bg-black/60 text-white rounded-2xl shadow-2xl border border-white/10 p-4">
+    <h3 class="font-semibold mb-2">Chat with us</h3>
+
+    <div id="chat-content" class="h-48 overflow-y-auto bg-black/30 border border-white/10 rounded p-2 text-sm mb-3 text-white">
+    </div>
+
+    <div class="flex">
+      <input id="chat-input"
+             class="border border-white/20 bg-black/30 text-white flex-grow p-2 text-sm rounded"
+             placeholder="Type a message...">
+      <button id="chat-send"
+              class="bg-white/20 text-white px-3 ml-2 text-sm rounded hover:bg-white/30 transition">Send</button>
+    </div>
+  </div>
+
+
+
+  <!-- ✅ CHATBOT JS -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    const btn = document.getElementById("chatbot-button");
+    const win = document.getElementById("chatbot-window");
+    const input = document.getElementById("chat-input");
+    const send = document.getElementById("chat-send");
+    const chat = document.getElementById("chat-content");
+
+    btn.onclick = () => win.classList.toggle("hidden");
+
+    function botReply(userText) {
+      userText = userText.toLowerCase();
+
+      if (userText.includes("hello") || userText.includes("hi"))
+        return "Hi! How can I help you today? 😊";
+
+      if (userText.includes("price") || userText.includes("packages"))
+        return "Our Entry package starts at R350, Standard at R750, and Premium at R1500.";
+
+      if (userText.includes("book"))
+        return "You can book a session in the 'Book' section on this page!";
+
+      if (userText.includes("wedding"))
+        return "Yes, we do wedding photography. Check our portfolio section!";
+
+      return "I'm still learning 😄 Try asking about prices, booking, weddings, or studio sessions.";
+    }
+
+    send.onclick = () => {
+      const text = input.value.trim();
+      if (!text) return;
+
+      chat.innerHTML += `<div class='mb-2 text-white'><strong>You:</strong> ${text}</div>`;
+
+      const reply = botReply(text);
+      chat.innerHTML += `<div class='mb-2 text-white/80'><strong>Bot:</strong> ${reply}</div>`;
+
+      chat.scrollTop = chat.scrollHeight;
+      input.value = "";
+    };
+  </script>
+
 </body>
 </html>
