@@ -107,10 +107,10 @@
         </article>
 
         <article class="rounded-lg overflow-hidden shadow">
-          <img src="assets/images/DSC_0081.jpg" alt="Schools" class="w-full h-48 object-cover">
+          <img src="assets/images/IMG_0384.JPG" alt="Schools" class="w-full h-48 object-cover">
           <div class="p-4">
-            <h3 class="font-semibold">Schools</h3>
-            <p class="text-sm text-gray-600 mt-1">Class photos & yearbook-ready shots.</p>
+            <h3 class="font-semibold">Birthday's</h3>
+            <p class="text-sm text-gray-600 mt-1">A birthday isn’t just a date — it’s your highlight reel.</p>
             <a href="https://instagram.com/meditation.pictures_sa" target="_blank" class="mt-3 inline-block text-sm text-blue-600">See more on Instagram →</a>
           </div>
         </article>
@@ -313,29 +313,38 @@
 
 
   <!-- ✅ CHATBOT HTML (Bottom-left, Glass Style) -->
-  <div id="chatbot-button"
-     class="fixed bottom-6 left-6 backdrop-blur-md bg-black/40 text-white p-4 rounded-full cursor-pointer shadow-xl border border-white/10 hover:bg-black/50 transition">
-  💬
+  <div
+    id="chatbot-button"
+    class="fixed bottom-6 left-6 backdrop-blur-md bg-black/40 text-white p-4 rounded-full cursor-pointer shadow-xl border border-white/10 hover:bg-black/50 transition"
+  >
+    💬
   </div>
 
+  <div
+    id="chatbot-window"
+    class="hidden fixed bottom-24 left-6 w-80 backdrop-blur-xl bg-black/60 text-white rounded-2xl shadow-2xl border border-white/10 p-4"
+  >
+    <h3 class="font-semibold mb-2">💬 Chat with Lamoya</h3>
 
-  <div id="chatbot-window"
-       class="hidden fixed bottom-24 left-6 w-80 backdrop-blur-xl bg-black/60 text-white rounded-2xl shadow-2xl border border-white/10 p-4">
-    <h3 class="font-semibold mb-2">Chat with us</h3>
-
-    <div id="chat-content" class="h-48 overflow-y-auto bg-black/30 border border-white/10 rounded p-2 text-sm mb-3 text-white">
-    </div>
+    <div
+      id="chat-content"
+      class="h-48 overflow-y-auto bg-black/30 border border-white/10 rounded p-2 text-sm mb-3 text-white"
+    ></div>
 
     <div class="flex">
-      <input id="chat-input"
-             class="border border-white/20 bg-black/30 text-white flex-grow p-2 text-sm rounded"
-             placeholder="Type a message...">
-      <button id="chat-send"
-              class="bg-white/20 text-white px-3 ml-2 text-sm rounded hover:bg-white/30 transition">Send</button>
+      <input
+        id="chat-input"
+        class="border border-white/20 bg-black/30 text-white flex-grow p-2 text-sm rounded"
+        placeholder="Type a message..."
+      />
+      <button
+        id="chat-send"
+        class="bg-white/20 text-white px-3 ml-2 text-sm rounded hover:bg-white/30 transition"
+      >
+        Send
+      </button>
     </div>
   </div>
-
-
 
   <!-- ✅ CHATBOT JS -->
   <script src="assets/js/main.js"></script>
@@ -347,50 +356,127 @@
     const send = document.getElementById("chat-send");
     const chat = document.getElementById("chat-content");
 
-    btn.onclick = () => win.classList.toggle("hidden");
+    // Toggle chatbot window
+    btn.onclick = () => {
+      win.classList.toggle("hidden");
 
+      // First-time greeting
+      if (!win.classList.contains("hidden") && chat.innerHTML.trim() === "") {
+        chat.innerHTML += `
+          <div class='mb-2 text-white/80'>
+            <strong>Lamoya:</strong> Hi there! 👋 I'm Lamoya — your virtual assistant. 
+            How can I help you today?
+          </div>`;
+      }
+    };
+
+    // --- BOT LOGIC ---
     function botReply(userText) {
-      userText = userText.toLowerCase();
+      const t = userText.toLowerCase();
 
-      if (userText.includes("hello") || userText.includes("hi"))
-        return "Hi! How can I help you today? 😊";
+      // --- Greetings / small talk ---
+      if (/(hello|hi|hey|morning|afternoon|evening)/.test(t))
+        return "Hi there! 😊 How can I brighten your day today?";
+      if (/(how are you|how you doing)/.test(t))
+        return "I’m feeling picture-perfect 😄 Thanks for asking! What about you?";
+      if (/(thank|thanks|appreciate)/.test(t))
+        return "You're so welcome 💛 Always happy to help!";
+      if (/(who are you|your name|what is this)/.test(t))
+        return "I'm Lamoya — your friendly virtual assistant here to help with bookings, prices, and info.";
 
-      if (userText.includes("price") || userText.includes("packages"))
-        return "Our Entry package starts at R350, Standard at R750, and Premium at R1500.";
+      // --- Prices / Packages ---
+      if (/(price|cost|package|rate|how much)/.test(t))
+        return "Our packages start at **R350 (Entry)**, **R750 (Standard)**, and **R1500 (Premium)** — all crafted to fit your needs.";
 
-      if (userText.includes("book"))
-        return "You can book a session in the 'Book' section on this page!";
+      // --- Booking ---
+      if (/(book|appointment|schedule|reserve|availability)/.test(t))
+        return "You can book your session in the **Book** section, or tell me your preferred date and time here 📅.";
 
-      if (userText.includes("wedding"))
-        return "Yes, we do wedding photography. Check our portfolio section!";
+      // --- Birthday / Events ---
+      if (/(birthday|party|celebration|event)/.test(t))
+        return "🎉 We love birthdays! Whether it’s a studio shoot or outdoor vibe, we’ll capture your joy beautifully.";
 
-      return "I'm still learning 😄 Try asking about prices, booking, weddings, or studio sessions.";
+      // --- Weddings / Couples ---
+      if (/(wedding|couple|engagement|love shoot|bridal)/.test(t))
+        return "💍 Absolutely! We do weddings, couples, and engagement shoots with style and warmth. Want to see a few samples?";
+
+      // --- Maternity / Family ---
+      if (/(maternity|baby bump|pregnancy|family|kids)/.test(t))
+        return "👶 We offer maternity and family sessions too — natural, heartfelt, and timeless.";
+
+      // --- Studio / Outdoor ---
+      if (/(studio|outdoor|location|on site|venue)/.test(t))
+        return "We shoot both **in-studio** and **outdoors** 🌿 — tell us your preferred style and we’ll recommend what suits you best.";
+
+      // --- Location / Contact ---
+      if (/(where|location|address|find|situated)/.test(t))
+        return "📍 We’re based in Johannesburg, but we travel for events and shoots too!";
+
+      // --- Social Media ---
+      if (/(instagram|facebook|social|page|follow)/.test(t))
+        return "You can find us on Instagram at **@meditation.pictures_sa** and Facebook as **Meditation Pictures** 📸";
+
+      // --- Operating Hours ---
+      if (/(open|hours|time|when)/.test(t))
+        return "🕓 We’re open **Mon–Sat, 9 AM – 6 PM**, and by appointment on Sundays.";
+
+      // --- Payment info ---
+      if (/(payment|deposit|eft|pay|cash)/.test(t))
+        return "We accept both **EFT and cash**. A small deposit secures your booking 💰.";
+
+      // --- Turnaround / Delivery ---
+      if (/(edit|delivery|turnaround|when ready|how long)/.test(t))
+        return "Edited photos are usually ready within **3–5 working days** — we’ll notify you when they’re done!";
+
+      // --- Portfolio / Work examples ---
+      if (/(portfolio|samples|examples|gallery|photos)/.test(t))
+        return "You can view our work in the **Portfolio** section on this site — each image tells its own story 📷.";
+
+      // --- Goodbye ---
+      if (/(bye|goodbye|see you|later)/.test(t))
+        return "Bye for now 👋 Can’t wait to chat again soon!";
+
+      // --- Default / Unknown ---
+      return "I'm still learning 😄 Try asking about **prices**, **bookings**, **birthdays**, **weddings**, or **location**.";
     }
 
+    // --- SEND MESSAGE HANDLER ---
     send.onclick = () => {
       const text = input.value.trim();
       if (!text) return;
 
-      chat.innerHTML += `<div class='mb-2 text-white'><strong>You:</strong> ${text}</div>`;
-
-      const reply = botReply(text);
-      chat.innerHTML += `<div class='mb-2 text-white/80'><strong>Bot:</strong> ${reply}</div>`;
-
+      // Display user message
+      chat.innerHTML += `
+        <div class='mb-2 text-white'>
+          <strong>You:</strong> ${text}
+        </div>`;
       chat.scrollTop = chat.scrollHeight;
       input.value = "";
+
+      // Add typing delay for realism
+      setTimeout(() => {
+        const reply = botReply(text);
+        chat.innerHTML += `
+          <div class='mb-2 text-white/80'>
+            <strong>Lamoya:</strong> ${reply}
+          </div>`;
+        chat.scrollTop = chat.scrollHeight;
+      }, 700);
     };
   </script>
 
+
+
   <script>
     const images = [
-      'assets/images/DSC_0049.jpg',
+      'assets/images/IMG_0381.JPG',
       'assets/images/DSC_0072.jpg',
       'assets/images/DSC_0033.jpg',
-      'assets/images/DSC_0054.jpg',
+      'assets/images/IMG_0382.JPG',
       'assets/images/DSC_0043.jpg',
       'assets/images/DSC_0061.jpg',
       'assets/images/DSC_0027.jpg',
-      'assets/images/DSC_0015.jpg',
+      'assets/images/IMG_0384.JPG',
       'assets/images/DSC_0008.jpg',
       'assets/images/DSC_0037.jpg',
       'assets/images/DSC_0069.jpg',
