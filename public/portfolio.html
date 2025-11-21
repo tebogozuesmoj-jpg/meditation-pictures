@@ -3,50 +3,159 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio — Meditation Pictures</title>
+  <title>Portfolio — Organized Collages</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/css/styles.css">
-
+  <style>
+    .collage-img { display:block; width:100%; height:100%; object-fit:cover; border-radius:0.5rem; }
+    .inline-img-link { display:inline-block; }
+    .collage-block { background:white; padding:18px; border-radius:0.7rem; border:1px solid #eaeaea; }
+  </style>
 </head>
 
-<body class="font-['Inter'] sans-serif text-gray-800">
-
-  <!-- NAV -->
-  <header class="bg-white shadow-sm sticky top-0 z-40">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/images/IMG_0287.jpg" class="w-10 h-10 object-contain">
-        <span class="font-semibold text-lg">Meditation Pictures</span>
-      </a>
-
-      <nav class="hidden md:flex gap-6">
-        <a href="portfolio.html" class="font-semibold underline">Portfolio</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#studio">Studio</a>
-        <a href="index.html#book">Book</a>
-      </nav>
-    </div>
-  </header>
+<body class="font-['Inter'] bg-gray-100 text-gray-800">
 
   <!-- TITLE -->
-  <section class="max-w-6xl mx-auto px-6 py-12">
+  <section class="max-w-6xl mx-auto px-6 py-10">
     <h1 class="text-3xl font-semibold">Full Portfolio</h1>
-    <p class="text-gray-600 mt-2">Explore our galleries: Weddings, Studio, Birthdays, Events and more.</p>
+    <p class="text-gray-600 mt-2">Organized categories with collage-style layouts. Click images to download.</p>
   </section>
 
-  <!-- GALLERY GRID -->
-  <section class="max-w-6xl mx-auto px-6 pb-20 grid md:grid-cols-3 sm:grid-cols-2 gap-6">
+  <main class="max-w-6xl mx-auto px-6 pb-20" id="portfolio"></main>
 
-    <!-- Example -->
-    <img src="assets/images/DSC_0042.jpg" class="w-full h-64 object-cover rounded shadow">
+<script>
+/* --------------------------------------------------------
+   1) EDIT YOUR IMAGE CATEGORIES HERE
+--------------------------------------------------------- */
+const categories = {
+  "Weddings": [
+    "assets/images/DSC_0042.jpg",
+    "assets/images/IMG_0384.JPG",
+    "assets/images/DSC_0033.jpg",
+    "/mnt/data/PHOTO-2025-11-20-07-52-42.jpg"
+  ],
 
-    <img src="assets/images/IMG_0384.JPG" class="w-full h-64 object-cover rounded shadow">
+  "School": [
+    "assets/images/IMG_0287.jpg"
+    // add more here…
+  ],
 
-    <img src="assets/images/DSC_0033.jpg" class="w-full h-64 object-cover rounded shadow">
+  "Studio": [
+    // Add images here…
+  ],
 
-    <!-- Keep adding all your photos here -->
-  </section>
+  "Events": [
+    // Add images here…
+  ],
+
+  "Birthday Shoots": [
+    // Add images here…
+  ],
+
+  "Family Sessions": [
+    // Add images here…
+  ]
+};
+
+/* --------------------------------------------------------
+   2) Collage Layout Templates (same system as before)
+--------------------------------------------------------- */
+function collageImgMarkup(src, extraClass = "") {
+  const filename = src.split("/").pop();
+  return `
+    <a href="${src}" download="${filename}" class="inline-img-link">
+      <img src="${src}" class="collage-img ${extraClass}" alt="">
+    </a>
+  `;
+}
+
+const layouts = {
+  2: [
+    imgs => `
+      <div class="grid grid-cols-2 gap-3 h-56">
+        ${imgs.map(src => collageImgMarkup(src)).join('')}
+      </div>`
+  ],
+
+  3: [
+    imgs => `
+      <div class="grid grid-cols-3 gap-3 h-64">
+        <div class="col-span-2">${collageImgMarkup(imgs[0], "h-full")}</div>
+        <div class="flex flex-col gap-3">
+          ${collageImgMarkup(imgs[1], "h-1/2")}
+          ${collageImgMarkup(imgs[2], "h-1/2")}
+        </div>
+      </div>`
+  ],
+
+  4: [
+    imgs => `
+      <div class="grid grid-cols-2 gap-3 h-64">
+        ${imgs.map(src => collageImgMarkup(src)).join('')}
+      </div>`
+  ],
+
+  5: [
+    imgs => `
+      <div class="grid grid-cols-3 gap-3 h-72">
+        <div class="grid gap-3">${collageImgMarkup(imgs[0])}${collageImgMarkup(imgs[1])}</div>
+        <div class="col-span-1 row-span-2">${collageImgMarkup(imgs[2], "h-full")}</div>
+        <div class="grid gap-3">${collageImgMarkup(imgs[3])}${collageImgMarkup(imgs[4])}</div>
+      </div>`
+  ]
+};
+
+/* --------------------------------------------------------
+   3) Build Collages Per Category
+--------------------------------------------------------- */
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function buildCategory(name, images) {
+  const section = document.createElement("section");
+  section.className = "py-10";
+
+  let html = `
+    <h2 class="text-2xl font-semibold mb-4">${name}</h2>
+    <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+  `;
+
+  let pointer = 0;
+
+  for (let i = 0; i < 6; i++) {   // 6 collage blocks per category (change as needed)
+    if (images.length === 0) break;
+
+    const count = randInt(2, Math.min(5, images.length));
+    const group = [];
+
+    for (let j = 0; j < count; j++) {
+      group.push(images[pointer % images.length]);
+      pointer++;
+    }
+
+    const templateOptions = layouts[count];
+    const template = templateOptions[randInt(0, templateOptions.length - 1)];
+
+    html += `<div class="collage-block">${template(group)}</div>`;
+  }
+
+  html += "</div>";
+  section.innerHTML = html;
+
+  return section;
+}
+
+function buildPortfolio() {
+  const container = document.getElementById("portfolio");
+
+  for (const [categoryName, imgs] of Object.entries(categories)) {
+    container.appendChild(buildCategory(categoryName, imgs));
+  }
+}
+
+buildPortfolio();
+</script>
 
 </body>
 </html>
